@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Manage Products | Future Store Admin{% endblock %}
+
+{% block content %}
+
+<section class="admin-page">
+<div class="container-custom">
+
+<div class="admin-header">
+<div>
+<h1>Products</h1>
+<p>Manage catalog, pricing, and inventory.</p>
+</div>
+<div class="admin-actions">
+<a href="{{ url_for('admin.dashboard') }}" class="admin-btn admin-btn-secondary">Dashboard</a>
+<a href="{{ url_for('admin.add_product') }}" class="admin-btn admin-btn-accent">Add Product</a>
+</div>
+</div>
+
+<div class="admin-panel">
+{% if products %}
+<table class="admin-table">
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Category</th>
+<th>Price</th>
+<th>Base Price</th>
+<th>Stock</th>
+<th>Rating</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+{% for product in products %}
+<tr>
+<td>{{ product['id'] }}</td>
+<td>{{ product['name'] }}</td>
+<td>{{ product['category'] }}</td>
+<td>${{ '%.2f'|format(product['price']) }}</td>
+<td>${{ '%.2f'|format(product['base_price'] or product['price']) }}</td>
+<td>{{ product['stock'] }}</td>
+<td>{{ product['rating'] }}</td>
+<td class="admin-table-actions">
+<a href="{{ url_for('store.product_detail', product_id=product['id']) }}" class="admin-link">View</a>
+<a href="{{ url_for('admin.remove_product', product_id=product['id']) }}"
+   class="admin-link admin-link-danger"
+   onclick="return confirm('Delete this product?')">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}
+<p class="admin-empty">No products found. Run seed_db.py or add a product.</p>
+{% endif %}
+</div>
+
+</div>
+</section>
+
+{% endblock %}

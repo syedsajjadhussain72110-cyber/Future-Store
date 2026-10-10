@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Returns &amp; Refunds | Future Store{% endblock %}
+
+{% block content %}
+
+<section class="info-page">
+<div class="container-custom">
+
+<div class="info-header">
+<span class="info-eyebrow"><i class="fa-solid fa-rotate-left"></i> Returns &amp; Refunds</span>
+<h1>Easy, 30-day returns</h1>
+<p>We want you to love what you ordered. If something isn't right, here's exactly how to send it back.</p>
+</div>
+
+<div class="steps-grid">
+
+<div class="step-card">
+<span class="step-number">1</span>
+<h3>Start your return</h3>
+<p>Go to <a href="{{ url_for('orders.my_orders') }}">My Orders</a>, find the item, and select "Write a Review" or contact us with your order number to begin.</p>
+</div>
+
+<div class="step-card">
+<span class="step-number">2</span>
+<h3>Pack it up</h3>
+<p>Place the item back in its original packaging with all accessories, manuals, and tags attached.</p>
+</div>
+
+<div class="step-card">
+<span class="step-number">3</span>
+<h3>Ship it back</h3>
+<p>Use the prepaid return label we email you, or drop it at any partner carrier location.</p>
+</div>
+
+<div class="step-card">
+<span class="step-number">4</span>
+<h3>Get refunded</h3>
+<p>Once we receive and inspect your return, your refund is issued to your original payment method within 5-7 business days.</p>
+</div>
+
+</div>
+
+<div class="policy-detail-card">
+<h2>Return policy details</h2>
+<ul class="policy-list">
+<li><i class="fa-solid fa-check"></i> Items must be returned within <strong>30 days</strong> of delivery.</li>
+<li><i class="fa-solid fa-check"></i> Items must be unused, undamaged, and in original packaging.</li>
+<li><i class="fa-solid fa-check"></i> Return shipping is free for defective or incorrect items.</li>
+<li><i class="fa-solid fa-xmark"></i> Perishable goods (Grocery category) and personal care items cannot be returned once opened.</li>
+<li><i class="fa-solid fa-xmark"></i> Gift cards and digital products are final sale.</li>
+</ul>
+</div>
+
+<div class="info-cta">
+<p>Still need help with a return?</p>
+<a href="{{ url_for('pages.contact') }}" class="admin-btn admin-btn-accent">Contact Support</a>
+</div>
+
+</div>
+</section>
+
+{% endblock %}

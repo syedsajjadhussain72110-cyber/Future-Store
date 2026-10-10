@@ -1,0 +1,22 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="500" fill="#0B1020"/>
+  <rect x="0" y="0" width="500" height="500" fill="url(#g)" opacity="0.6"/>
+  <defs>
+    <radialGradient id="g" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#1A2240"/>
+      <stop offset="100%" stop-color="#0B1020"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="55%" stop-color="#D946EF"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <g opacity="0.9">
+    <rect x="178" y="178" width="144" height="120" rx="10" fill="none" stroke="url(#accent)" stroke-width="3"/>
+    <path d="M178 252 L218 212 L248 240 L282 206 L322 246" fill="none" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="206" cy="206" r="9" fill="none" stroke="url(#accent)" stroke-width="3"/>
+  </g>
+  <text x="250" y="335" font-family="Arial, sans-serif" font-size="20" font-weight="600" fill="#C4B5FD" text-anchor="middle" letter-spacing="1">FUTURE STORE</text>
+  <text x="250" y="360" font-family="Arial, sans-serif" font-size="13" fill="#7C88A8" text-anchor="middle">Image unavailable</text>
+</svg>

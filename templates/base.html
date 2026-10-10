@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{% block title %}Future Store{% endblock %}</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+<div class="container-custom">
+
+<div class="topbar-left">
+<i class="fa-solid fa-truck-fast"></i> Free Shipping Over $50
+</div>
+
+<div class="topbar-right">
+<span><i class="fa-solid fa-headset"></i> 24/7 Support</span>
+<span class="topbar-divider"></span>
+<span><i class="fa-solid fa-lock"></i> Secure Checkout</span>
+</div>
+
+</div>
+</div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="container-custom">
+
+<a href="{{ url_for('store.index') }}" class="logo">
+Future Store
+</a>
+
+<div class="search-container">
+
+<form action="{{ url_for('store.index') }}" method="GET">
+
+<input
+type="text"
+name="search"
+placeholder="Search products, brands and categories..."
+class="search-input">
+
+<button class="search-btn" aria-label="Search">
+<i class="fa-solid fa-magnifying-glass"></i>
+</button>
+
+</form>
+
+</div>
+
+<div class="nav-actions">
+
+{% if user_logged_in %}
+<a href="{{ url_for('dashboard.my_dashboard') }}" class="nav-user"><i class="fa-solid fa-circle-user"></i> Hi, {{ current_user }}</a>
+{% if current_role == 'admin' %}
+<a href="{{ url_for('admin.dashboard') }}" class="nav-btn">Admin</a>
+{% endif %}
+<a href="{{ url_for('orders.my_orders') }}" class="nav-btn">Orders</a>
+<a href="{{ url_for('auth.logout') }}" class="nav-btn">Logout</a>
+{% else %}
+<a href="{{ url_for('auth.login') }}" class="nav-btn">Login</a>
+<a href="{{ url_for('auth.register') }}" class="nav-btn">Register</a>
+{% endif %}
+
+<a href="{{ url_for('cart.view_cart') }}" class="cart-btn">
+<i class="fa-solid fa-cart-shopping"></i> Cart{% if cart_count %} <span class="cart-badge">{{ cart_count }}</span>{% endif %}
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- CATEGORY BAR -->
+
+<div class="category-bar">
+
+<div class="container-custom category-wrapper">
+
+{% for cat in nav_categories %}
+<a href="{{ url_for('store.index', category=cat) }}">{{ cat }}</a>
+{% endfor %}
+
+</div>
+
+</div>
+
+<!-- FLASH MESSAGES -->
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div class="container-custom flash-container">
+{% for category, message in messages %}
+<div class="flash-message flash-{{ category }}">{{ message }}</div>
+{% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+
+<!-- PAGE CONTENT -->
+
+<main>
+
+{% block content %}
+
+{% endblock %}
+
+</main>
+
+<!-- AI ASSISTANT -->
+
+<button id="chatButton" class="ai-button" aria-label="Open AI Assistant" aria-expanded="false" aria-controls="aiChatPanel">
+<i class="fa-solid fa-robot"></i>
+</button>
+
+<div id="aiChatPanel" class="ai-chat-panel" role="dialog" aria-label="Future Store AI Assistant" aria-hidden="true">
+
+<div class="ai-chat-header">
+<div class="ai-chat-header-info">
+<span class="ai-chat-avatar"><i class="fa-solid fa-robot"></i></span>
+<div>
+<strong>Future Store Assistant</strong>
+<span class="ai-chat-status"><span class="ai-status-dot"></span> Online</span>
+</div>
+</div>
+<div class="ai-chat-header-actions">
+<button type="button" id="aiChatReset" class="ai-chat-icon-btn" aria-label="Start a new conversation" title="New conversation">
+<i class="fa-solid fa-rotate-right"></i>
+</button>
+<button type="button" id="aiChatClose" class="ai-chat-icon-btn" aria-label="Close chat">
+<i class="fa-solid fa-xmark"></i>
+</button>
+</div>
+</div>
+
+<div id="aiChatMessages" class="ai-chat-messages">
+<div class="ai-chat-msg ai-chat-msg-bot">
+<p>Hey! I'm the Future Store assistant. Ask me to find a product, check an order policy, or anything else about shopping here. 👋</p>
+</div>
+<div class="ai-chat-quick-replies">
+<button type="button" class="ai-quick-reply">Show me headphones under $100</button>
+<button type="button" class="ai-quick-reply">What's your return policy?</button>
+<button type="button" class="ai-quick-reply">Recommend a gaming laptop</button>
+</div>
+</div>
+
+<form id="aiChatForm" class="ai-chat-input-row">
+<input type="text" id="aiChatInput" placeholder="Ask about products, orders, shipping..." autocomplete="off" maxlength="500">
+<button type="submit" class="ai-chat-send-btn" aria-label="Send message">
+<i class="fa-solid fa-paper-plane"></i>
+</button>
+</form>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="container-custom footer-grid">
+
+<div>
+<h3>Future Store</h3>
+<p>
+Premium AI Powered Ecommerce Platform.
+</p>
+</div>
+
+<div>
+<h4>Shop</h4>
+<ul>
+<li><a href="{{ url_for('store.index', category='Electronics') }}">Electronics</a></li>
+<li><a href="{{ url_for('store.index', category='Toys & Games') }}">Gaming</a></li>
+<li><a href="{{ url_for('store.index', category='Clothing') }}">Fashion</a></li>
+<li><a href="{{ url_for('store.index', category='Home & Garden') }}">Home</a></li>
+</ul>
+</div>
+
+<div>
+<h4>Support</h4>
+<ul>
+<li><a href="{{ url_for('pages.contact') }}">Contact</a></li>
+<li><a href="{{ url_for('pages.help_center') }}">Help Center</a></li>
+<li><a href="{{ url_for('pages.returns') }}">Returns</a></li>
+<li><a href="{{ url_for('orders.my_orders') }}">Orders</a></li>
+</ul>
+</div>
+
+<div>
+<h4>Legal</h4>
+<ul>
+<li><a href="{{ url_for('pages.privacy') }}">Privacy</a></li>
+<li><a href="{{ url_for('pages.terms') }}">Terms</a></li>
+<li><a href="{{ url_for('pages.cookies') }}">Cookies</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Future Store. All Rights Reserved.
+</div>
+
+</footer>
+
+</body>
+</html>

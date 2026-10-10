@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Help Center | Future Store{% endblock %}
+
+{% block content %}
+
+<section class="info-page">
+<div class="container-custom">
+
+<div class="info-header">
+<span class="info-eyebrow"><i class="fa-solid fa-circle-question"></i> Help Center</span>
+<h1>How can we help?</h1>
+<p>Answers to the questions we hear most. Can't find what you need? <a href="{{ url_for('pages.contact') }}">Contact us</a> or use the AI Assistant.</p>
+</div>
+
+<div class="help-grid">
+
+<div class="help-category">
+<h2><i class="fa-solid fa-box"></i> Orders &amp; Shipping</h2>
+
+<details class="faq-item" open>
+<summary>How do I track my order?</summary>
+<p>Go to <a href="{{ url_for('orders.my_orders') }}">My Orders</a> while signed in to see the status of every order you've placed, from Confirmed through Delivered.</p>
+</details>
+
+<details class="faq-item">
+<summary>How long does shipping take?</summary>
+<p>Most orders arrive within 3-5 business days. Shipping is free on orders over $50.</p>
+</details>
+
+<details class="faq-item">
+<summary>Can I change or cancel an order after placing it?</summary>
+<p>Contact us as soon as possible after placing your order. If it hasn't shipped yet, we can usually update or cancel it.</p>
+</details>
+</div>
+
+<div class="help-category">
+<h2><i class="fa-solid fa-rotate-left"></i> Returns &amp; Refunds</h2>
+
+<details class="faq-item">
+<summary>What's your return policy?</summary>
+<p>Most items can be returned within 30 days of delivery for a full refund, provided they're unused and in their original packaging. See our full <a href="{{ url_for('pages.returns') }}">Returns page</a> for details.</p>
+</details>
+
+<details class="faq-item">
+<summary>When will I get my refund?</summary>
+<p>Refunds are issued to your original payment method once we receive and inspect the returned item, typically within 5-7 business days.</p>
+</details>
+</div>
+
+<div class="help-category">
+<h2><i class="fa-solid fa-user"></i> Account &amp; Orders</h2>
+
+<details class="faq-item">
+<summary>Do I need an account to shop?</summary>
+<p>You can browse and search freely without an account, but you'll need to <a href="{{ url_for('auth.register') }}">create one</a> to add items to your cart and check out.</p>
+</details>
+
+<details class="faq-item">
+<summary>How do I leave a product review?</summary>
+<p>Open any product you've purchased and scroll to the Customer Reviews section — you can leave one rating and comment per product while signed in.</p>
+</details>
+</div>
+
+<div class="help-category">
+<h2><i class="fa-solid fa-credit-card"></i> Payment</h2>
+
+<details class="faq-item">
+<summary>What payment methods do you accept?</summary>
+<p>Cash on Delivery, Credit/Debit Card, and EasyPaisa/JazzCash are all available at checkout.</p>
+</details>
+
+<details class="faq-item">
+<summary>Is my payment information secure?</summary>
+<p>Yes. All transactions are encrypted, and we never store your full card details on our servers.</p>
+</details>
+</div>
+
+</div>
+
+</div>
+</section>
+
+{% endblock %}

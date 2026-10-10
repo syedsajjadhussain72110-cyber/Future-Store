@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Privacy Policy | Future Store{% endblock %}
+
+{% block content %}
+
+<section class="info-page">
+<div class="container-custom">
+
+<div class="info-header">
+<span class="info-eyebrow"><i class="fa-solid fa-shield-halved"></i> Legal</span>
+<h1>Privacy Policy</h1>
+<p>Last updated: January 2026</p>
+</div>
+
+<div class="legal-card">
+
+<h2>What we collect</h2>
+<p>When you create a Future Store account, we collect your name, email address, and a securely hashed version of your password — we never store passwords in plain text. When you place an order, we also collect the order details and shipping information you provide at checkout.</p>
+
+<h2>How we use it</h2>
+<p>We use your information to operate your account, process and ship orders, respond to support requests, and show you your own order history and reviews. We do not sell your personal information to third parties.</p>
+
+<h2>Cookies</h2>
+<p>We use a small number of essential cookies to keep you signed in and remember your cart between visits. See our <a href="{{ url_for('pages.cookies') }}">Cookie Policy</a> for the full list.</p>
+
+<h2>Data retention</h2>
+<p>We keep your account and order history for as long as your account is active. You can request deletion of your account and associated data at any time by contacting support.</p>
+
+<h2>Your choices</h2>
+<p>You can review and update your profile information from your <a href="{{ url_for('dashboard.my_dashboard') }}">Dashboard</a> at any time, or contact us to request a copy or deletion of your data.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy? Reach out through our <a href="{{ url_for('pages.contact') }}">Contact page</a>.</p>
+
+</div>
+
+</div>
+</section>
+
+{% endblock %}

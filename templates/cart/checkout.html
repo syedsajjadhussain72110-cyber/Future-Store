@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% block title %}Checkout - Future Store{% endblock %}
+{% block content %}
+
+<div class="max-w-3xl mx-auto">
+    <h1 class="text-2xl font-bold text-gray-800 mb-6">
+        <i class="fas fa-credit-card mr-2 text-orange-500"></i>Checkout
+    </h1>
+
+    <div class="flex flex-col lg:flex-row gap-6">
+
+        <!-- CHECKOUT FORM -->
+        <div class="flex-1">
+            <div class="bg-white rounded border border-gray-200 p-6 mb-4">
+                <h2 class="font-bold text-gray-800 mb-4 text-lg border-b pb-2">
+                    <span class="bg-orange-500 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-sm mr-2">1</span>
+                    Shipping Address
+                </h2>
+                <form id="checkoutForm" action="{{ url_for('cart.checkout') }}" method="POST">
+                    <div class="grid grid-cols-2 gap-3 mb-3">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">First Name</label>
+                            <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-orange-400" placeholder="John" required />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Last Name</label>
+                            <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-orange-400" placeholder="Doe" required />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Address</label>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-orange-400" placeholder="House No., Street, Area" required />
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 mb-3">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">City</label>
+                            <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-orange-400" placeholder="Karachi" required />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Province</label>
+                            <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-orange-400" placeholder="Sindh" required />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">ZIP Code</label>
+                            <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-orange-400" placeholder="75500" required />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-orange-400" placeholder="+92 300 1234567" required />
+                    </div>
+            </div>
+
+            <div class="bg-white rounded border border-gray-200 p-6 mb-4">
+                <h2 class="font-bold text-gray-800 mb-4 text-lg border-b pb-2">
+                    <span class="bg-orange-500 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-sm mr-2">2</span>
+                    Payment Method
+                </h2>
+                <div class="space-y-2">
+                    <label class="flex items-center gap-3 cursor-pointer p-3 border rounded hover:bg-orange-50">
+                        <input type="radio" name="payment" value="cod" checked class="accent-orange-500" />
+                        <i class="fas fa-money-bill-wave text-green-600"></i>
+                        <span class="text-sm font-medium">Cash on Delivery</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer p-3 border rounded hover:bg-orange-50">
+                        <input type="radio" name="payment" value="card" class="accent-orange-500" />
+                        <i class="fas fa-credit-card text-blue-600"></i>
+                        <span class="text-sm font-medium">Credit / Debit Card</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer p-3 border rounded hover:bg-orange-50">
+                        <input type="radio" name="payment" value="easypaisa" class="accent-orange-500" />
+                        <i class="fas fa-mobile-alt text-green-500"></i>
+                        <span class="text-sm font-medium">EasyPaisa / JazzCash</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="bg-white rounded border border-gray-200 p-6">
+                <h2 class="font-bold text-gray-800 mb-4 text-lg border-b pb-2">
+                    <span class="bg-orange-500 text-white rounded-full w-6 h-6 inline-flex items-center justify-center text-sm mr-2">3</span>
+                    Review Items ({{ items|length }})
+                </h2>
+                <div class="space-y-3">
+                    {% for item in items %}
+                    <div class="flex gap-3 items-center">
+                        <img src="{{ product_image(item['image']) }}" alt="{{ item['name'] }}"
+                            class="w-16 h-16 object-contain border rounded p-1"
+                            onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/placeholder.svg') }}'" />
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-gray-800 line-clamp-1">{{ item['name'] }}</p>
+                            <p class="text-xs text-gray-500">Qty: {{ item['quantity'] }}</p>
+                        </div>
+                        <p class="price-tag font-bold text-sm">${{ "%.2f"|format(item['price'] * item['quantity']) }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <button type="submit" class="w-full btn-orange py-3 rounded font-bold text-base mt-6">
+                    <i class="fas fa-shopping-bag mr-2"></i>Place Your Order (${{ "%.2f"|format(total * 1.1) }})
+                </button>
+                </form>
+
+                <p class="text-xs text-gray-500 text-center mt-3">
+                    Academic demo checkout: no payment is processed. Use test details only.
+                </p>
+            </div>
+        </div>
+
+        <!-- ORDER SUMMARY -->
+        <div class="lg:w-64 flex-shrink-0">
+            <div class="bg-white rounded border border-gray-200 p-4 sticky top-4">
+                <h3 class="font-bold text-gray-800 mb-3 border-b pb-2">Order Summary</h3>
+                <div class="space-y-2 text-sm text-gray-600 mb-3">
+                    <div class="flex justify-between">
+                        <span>Items ({{ items|length }})</span>
+                        <span>${{ "%.2f"|format(total) }}</span>
+                    </div>
+                    <div class="flex justify-between text-green-600">
+                        <span>Shipping</span>
+                        <span>FREE</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Tax (10%)</span>
+                        <span>${{ "%.2f"|format(total * 0.1) }}</span>
+                    </div>
+                </div>
+                <div class="border-t pt-3 flex justify-between font-bold text-gray-900">
+                    <span>Order Total</span>
+                    <span class="price-tag text-lg">${{ "%.2f"|format(total * 1.1) }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

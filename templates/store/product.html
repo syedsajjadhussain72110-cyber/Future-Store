@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ product['name'] }} | Future Store
+{% endblock %}
+
+{% block content %}
+
+<section class="product-page">
+
+<div class="container-custom">
+
+<div class="product-layout">
+
+<div class="product-gallery">
+
+<img
+class="product-image main-product-image"
+src="{{ product_image(product['image']) }}"
+alt="{{ product['name'] }}"
+loading="lazy"
+onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/placeholder.svg') }}'">
+
+</div>
+
+<div class="product-info">
+
+<span class="badge">
+⭐ Premium Product
+</span>
+
+<h1>
+{{ product['name'] }}
+</h1>
+
+<div class="rating-row">
+
+★ {{ product['rating'] }}
+
+<span>
+{% if avg_rating %}
+{{ '%.1f'|format(avg_rating) }} average from {{ reviews|length }} review(s)
+{% else %}
+No reviews yet
+{% endif %}
+</span>
+
+</div>
+
+<div class="price-row">
+
+<span class="price">
+${{ '%.2f'|format(product['price']) }}
+</span>
+
+{% if product['base_price'] and product['base_price'] > product['price'] %}
+<span class="old-price">
+${{ '%.2f'|format(product['base_price']) }}
+</span>
+{% elif product['base_price'] and product['base_price'] < product['price'] %}
+<span class="old-price">
+Was ${{ '%.2f'|format(product['base_price']) }}
+</span>
+{% endif %}
+
+</div>
+
+<p class="product-description">
+{{ product['description'] }}
+</p>
+
+<div class="stock-status">
+{% if product['stock'] > 0 %}
+🟢 In Stock ({{ product['stock'] }} available)
+{% else %}
+🔴 Out of Stock
+{% endif %}
+</div>
+
+{% if user_logged_in %}
+<form action="{{ url_for('cart.add', product_id=product['id']) }}" method="POST" class="product-buttons">
+<input type="hidden" name="quantity" value="1">
+<button type="submit" class="cart-big-btn">
+🛒 Add To Cart
+</button>
+</form>
+{% else %}
+<div class="product-buttons">
+<a href="{{ url_for('auth.login') }}" class="cart-big-btn" style="text-decoration:none;display:inline-block;">
+🛒 Login to Add To Cart
+</a>
+</div>
+{% endif %}
+
+<div class="delivery-box">
+🚚 Free Delivery <br>
+🔄 Easy Returns <br>
+🔒 Secure Checkout
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% if product.get('video_url') %}
+
+<section class="video-section">
+
+<div class="container-custom">
+
+<h2 class="section-title">
+🎥 Product Video
+</h2>
+
+<video controls width="100%">
+<source src="{{ product['video_url'] }}" type="video/mp4">
+</video>
+
+</div>
+
+</section>
+
+{% endif %}
+
+<section class="recommended-section">
+
+<div class="container-custom">
+
+<h2 class="section-title">
+<i class="fa-solid fa-wand-magic-sparkles"></i> AI Recommended Products
+</h2>
+
+<div class="products-grid">
+
+{% for rec in recommendations %}
+
+<div class="product-card">
+
+<a href="{{ url_for('store.product_detail', product_id=rec['id']) }}">
+
+<img
+class="product-image"
+src="{{ product_image(rec['image']) }}"
+alt="{{ rec['name'] }}"
+loading="lazy"
+onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/placeholder.svg') }}'">
+
+</a>
+
+<div class="product-body">
+
+<h3>
+{{ rec['name'] }}
+</h3>
+
+<p class="price">
+${{ '%.2f'|format(rec['price']) }}
+</p>
+
+<a href="{{ url_for('store.product_detail', product_id=rec['id']) }}" class="view-btn">
+View Product
+</a>
+
+</div>
+
+</div>
+
+{% else %}
+<p class="admin-empty">No recommendations available yet.</p>
+{% endfor %}
+
+</div>
+
+</div>
+
+</section>
+
+<section class="reviews-section">
+
+<div class="container-custom">
+
+<h2 class="section-title">
+⭐ Customer Reviews
+</h2>
+
+{% if user_logged_in %}
+<form method="POST" action="{{ url_for('store.submit_review', product_id=product['id']) }}" class="admin-form admin-form-panel" style="margin-bottom:24px;">
+<div class="admin-form-grid">
+<div class="admin-form-group">
+<label for="rating">Rating</label>
+<select id="rating" name="rating">
+<option value="5">5 - Excellent</option>
+<option value="4">4 - Good</option>
+<option value="3">3 - Average</option>
+<option value="2">2 - Poor</option>
+<option value="1">1 - Terrible</option>
+</select>
+</div>
+</div>
+<div class="admin-form-group">
+<label for="comment">Comment</label>
+<textarea id="comment" name="comment" rows="3" placeholder="Share your experience..."></textarea>
+</div>
+<button type="submit" class="admin-btn admin-btn-accent">Submit Review</button>
+</form>
+{% endif %}
+
+{% for review in reviews %}
+<div class="review-card">
+<strong>{{ review['user_name'] }}</strong>
+<span>{{ '★' * review['rating'] }}{{ '☆' * (5 - review['rating']) }}</span>
+<p>{{ review['comment'] or 'No comment provided.' }}</p>
+<small>{{ review['created_at']|format_date }}</small>
+</div>
+{% else %}
+<p class="admin-empty">Be the first to review this product.</p>
+{% endfor %}
+
+</div>
+
+</section>
+
+{% endblock %}

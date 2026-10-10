@@ -1,0 +1,912 @@
+[
+  {
+    "name": "Sony WH-1000XM5",
+    "category": "Electronics",
+    "price": 348.0,
+    "rating": 4.8,
+    "brand": "Sony",
+    "description": "Industry-leading noise canceling wireless headphones with 30hr battery life, multipoint connection, and speak-to-chat technology. Premium sound quality with LDAC support.",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80",
+    "stock": 50
+  },
+  {
+    "name": "Apple AirPods Pro (2nd Gen)",
+    "category": "Electronics",
+    "price": 249.0,
+    "rating": 4.7,
+    "brand": "Apple",
+    "description": "Active noise cancellation, adaptive transparency, personalized spatial audio with dynamic head tracking. MagSafe charging case with USB-C.",
+    "image": "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=600&q=80",
+    "stock": 80
+  },
+  {
+    "name": "Samsung 65\" 4K QLED TV",
+    "category": "Electronics",
+    "price": 1099.0,
+    "rating": 4.6,
+    "brand": "Samsung",
+    "description": "Quantum Dot technology with 100% Color Volume, Quantum HDR, Real Game Enhancer+ for 4K 120fps gaming. Smart TV with Alexa built-in.",
+    "image": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&q=80",
+    "stock": 20
+  },
+  {
+    "name": "Logitech MX Master 3S",
+    "category": "Electronics",
+    "price": 99.99,
+    "rating": 4.7,
+    "brand": "Logitech",
+    "description": "Ultra-fast MagSpeed electromagnetic scrolling, 8K DPI optical sensor, quiet clicks, ergonomic design, works on any surface including glass.",
+    "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&q=80",
+    "stock": 120
+  },
+  {
+    "name": "iPad Air (5th Generation)",
+    "category": "Electronics",
+    "price": 749.0,
+    "rating": 4.8,
+    "brand": "Apple",
+    "description": "M1 chip, 10.9-inch Liquid Retina display, 5G capable, USB-C connector, Touch ID, works with Apple Pencil and Magic Keyboard.",
+    "image": "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=600&q=80",
+    "stock": 35
+  },
+  {
+    "name": "JBL Charge 5 Bluetooth Speaker",
+    "category": "Electronics",
+    "price": 149.95,
+    "rating": 4.7,
+    "brand": "JBL",
+    "description": "Powerful JBL Pro Sound, built-in powerbank, IP67 waterproof and dustproof, 20 hours of playtime, PartyBoost for multiple speakers.",
+    "image": "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&q=80",
+    "stock": 60
+  },
+  {
+    "name": "Anker 65W USB-C Charger",
+    "category": "Electronics",
+    "price": 35.99,
+    "rating": 4.6,
+    "brand": "Anker",
+    "description": "GaNPrime technology, charges MacBook Pro 40% faster, 3 ports (2 USB-C + 1 USB-A), compact foldable design, compatible with all USB-C devices.",
+    "image": "https://images.unsplash.com/photo-1583863788434-e62bd6f1c1a4?w=600&q=80",
+    "stock": 200
+  },
+  {
+    "name": "Sony PlayStation 5",
+    "category": "Electronics",
+    "price": 499.99,
+    "rating": 4.8,
+    "brand": "Sony",
+    "description": "Ultra-high speed SSD, ray tracing, 4K gaming up to 120fps, haptic feedback DualSense controller, 3D Audio, backward compatible with PS4.",
+    "image": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=600&q=80",
+    "stock": 15
+  },
+  {
+    "name": "Kindle Paperwhite (11th Gen)",
+    "category": "Electronics",
+    "price": 139.99,
+    "rating": 4.7,
+    "brand": "Amazon",
+    "description": "6.8\" display with adjustable warm light, 20% faster page turns, 10 weeks battery, waterproof, 8GB storage, glare-free for reading anywhere.",
+    "image": "https://images.unsplash.com/photo-1592496431122-2b13e0e548c5?w=600&q=80",
+    "stock": 75
+  },
+  {
+    "name": "GoPro HERO12 Black",
+    "category": "Electronics",
+    "price": 399.99,
+    "rating": 4.6,
+    "brand": "GoPro",
+    "description": "5.3K60 + 4K120 video, HyperSmooth 6.0 stabilization, 27MP photos, HDR video, waterproof to 33ft, 10-bit color, live streaming.",
+    "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&q=80",
+    "stock": 40
+  },
+  {
+    "name": "Apple MacBook Air M2",
+    "category": "Computers",
+    "price": 1099.0,
+    "rating": 4.9,
+    "brand": "Apple",
+    "description": "M2 chip with 8-core CPU and 8-core GPU, 13.6-inch Liquid Retina display, 18-hour battery, MagSafe charging, fanless design, 8GB RAM 256GB SSD.",
+    "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80",
+    "stock": 25
+  },
+  {
+    "name": "Dell XPS 15 Laptop",
+    "category": "Computers",
+    "price": 1799.99,
+    "rating": 4.5,
+    "brand": "Dell",
+    "description": "15.6\" OLED 3.5K display, Intel Core i7-13700H, NVIDIA RTX 4060, 16GB DDR5 RAM, 512GB SSD, Thunderbolt 4, premium build quality.",
+    "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=80",
+    "stock": 18
+  },
+  {
+    "name": "ASUS ROG Strix G16 Gaming Laptop",
+    "category": "Computers",
+    "price": 1499.99,
+    "rating": 4.6,
+    "brand": "ASUS",
+    "description": "Intel Core i9-13980HX, NVIDIA RTX 4070, 16GB DDR5, 1TB SSD, 16\" QHD 240Hz display, per-key RGB keyboard, MUX Switch.",
+    "image": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=600&q=80",
+    "stock": 22
+  },
+  {
+    "name": "Samsung 27\" Odyssey G7 Monitor",
+    "category": "Computers",
+    "price": 449.99,
+    "rating": 4.5,
+    "brand": "Samsung",
+    "description": "27\" WQHD 1440p, 240Hz, 1ms response, QLED, 1000R curved, G-Sync compatible, HDR600, HDMI 2.1, perfect for gaming and productivity.",
+    "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&q=80",
+    "stock": 30
+  },
+  {
+    "name": "Corsair K100 RGB Mechanical Keyboard",
+    "category": "Computers",
+    "price": 229.99,
+    "rating": 4.5,
+    "brand": "Corsair",
+    "description": "OPX optical-mechanical switches, per-key RGB backlighting, iCUE wheel, 44-zone LightEdge, USB 3.2 Type-A passthrough, wrist rest included.",
+    "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80",
+    "stock": 45
+  },
+  {
+    "name": "WD 4TB My Passport Portable SSD",
+    "category": "Computers",
+    "price": 89.99,
+    "rating": 4.6,
+    "brand": "WD",
+    "description": "4TB portable external SSD, USB 3.2 Gen 2 (1050MB/s), password protection with 256-bit AES hardware encryption, shock-resistant design.",
+    "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&q=80",
+    "stock": 90
+  },
+  {
+    "name": "HP LaserJet Pro M404dn",
+    "category": "Computers",
+    "price": 319.99,
+    "rating": 4.5,
+    "brand": "HP",
+    "description": "38 ppm monochrome laser printer, automatic duplex printing, 1200 dpi, Ethernet + USB connectivity, 250-sheet tray, JetIntelligence toner.",
+    "image": "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=600&q=80",
+    "stock": 28
+  },
+  {
+    "name": "Nike Air Max 270",
+    "category": "Footwear",
+    "price": 150.0,
+    "rating": 4.5,
+    "brand": "Nike",
+    "description": "Lifestyle shoe with Max Air heel unit for all-day comfort. Mesh upper for breathability, foam midsole, rubber outsole with flex grooves.",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
+    "stock": 100
+  },
+  {
+    "name": "Adidas Ultraboost 22",
+    "category": "Footwear",
+    "price": 189.99,
+    "rating": 4.6,
+    "brand": "Adidas",
+    "description": "BOOST midsole for energy return, Primeknit+ upper, Continental rubber outsole, Linear Energy Push system, available in multiple colorways.",
+    "image": "https://images.unsplash.com/photo-1606107557195-181f43c4af2c?w=600&q=80",
+    "stock": 85
+  },
+  {
+    "name": "Dr. Martens 1460 Original Boots",
+    "category": "Footwear",
+    "price": 149.95,
+    "rating": 4.7,
+    "brand": "Dr. Martens",
+    "description": "Iconic 8-eye leather boots, AirWair bouncing sole, yellow welt stitching, heat-sealed and welted for durability, iconic pull tab.",
+    "image": "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=600&q=80",
+    "stock": 60
+  },
+  {
+    "name": "Birkenstock Arizona Sandals",
+    "category": "Footwear",
+    "price": 99.95,
+    "rating": 4.6,
+    "brand": "Birkenstock",
+    "description": "Classic two-strap sandal with anatomically shaped cork-latex footbed, deep heel cup, adjustable buckles, EVA outsole, natural suede upper.",
+    "image": "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=600&q=80",
+    "stock": 75
+  },
+  {
+    "name": "Converse Chuck Taylor All Star",
+    "category": "Footwear",
+    "price": 55.0,
+    "rating": 4.5,
+    "brand": "Converse",
+    "description": "Canvas upper, rubber toe cap and sole, medial eyelets for ventilation, OrthoLite cushioning, iconic Chuck Taylor ankle patch.",
+    "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&q=80",
+    "stock": 150
+  },
+  {
+    "name": "New Balance 990v5 Running Shoes",
+    "category": "Footwear",
+    "price": 184.99,
+    "rating": 4.7,
+    "brand": "New Balance",
+    "description": "Made in USA, ENCAP midsole technology, premium pigskin and mesh upper, dual-density collar foam, blown rubber outsole for durability.",
+    "image": "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600&q=80",
+    "stock": 55
+  },
+  {
+    "name": "Timberland 6-Inch Premium Boots",
+    "category": "Footwear",
+    "price": 198.0,
+    "rating": 4.6,
+    "brand": "Timberland",
+    "description": "Waterproof nubuck leather, Thermolite insulation, padded collar, lug rubber lug outsole, direct-attach construction, anti-fatigue technology.",
+    "image": "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=600&q=80",
+    "stock": 45
+  },
+  {
+    "name": "Levi's 501 Original Jeans",
+    "category": "Clothing",
+    "price": 59.5,
+    "rating": 4.5,
+    "brand": "Levi's",
+    "description": "The original blue jean since 1873. Straight fit, button fly, sits at waist, made from heavyweight denim, sturdy metal hardware.",
+    "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80",
+    "stock": 200
+  },
+  {
+    "name": "The North Face Thermoball Jacket",
+    "category": "Clothing",
+    "price": 229.0,
+    "rating": 4.6,
+    "brand": "The North Face",
+    "description": "ThermoBall Eco insulation keeps you warm even when wet, packable into its own pocket, recycled materials, zip hand pockets, water-repellent finish.",
+    "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&q=80",
+    "stock": 40
+  },
+  {
+    "name": "Champion Reverse Weave Hoodie",
+    "category": "Clothing",
+    "price": 65.0,
+    "rating": 4.4,
+    "brand": "Champion",
+    "description": "Reverse Weave construction minimizes shrinkage, heavyweight fleece, ribbed side panels, kangaroo pocket, embroidered C logo.",
+    "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80",
+    "stock": 120
+  },
+  {
+    "name": "Ralph Lauren Polo Shirt",
+    "category": "Clothing",
+    "price": 89.5,
+    "rating": 4.5,
+    "brand": "Ralph Lauren",
+    "description": "Classic fit, iconic pony embroidery, soft cotton mesh, ribbed collar and cuffs, two-button placket, machine washable, 100% cotton.",
+    "image": "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=600&q=80",
+    "stock": 180
+  },
+  {
+    "name": "Carhartt WIP Watch Hat Beanie",
+    "category": "Clothing",
+    "price": 28.0,
+    "rating": 4.6,
+    "brand": "Carhartt",
+    "description": "100% acrylic construction, woven Carhartt label, ribbed knit, firm fit, OS sizing, classic utilitarian design in multiple colors.",
+    "image": "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600&q=80",
+    "stock": 250
+  },
+  {
+    "name": "Patagonia Better Sweater Fleece",
+    "category": "Clothing",
+    "price": 139.0,
+    "rating": 4.7,
+    "brand": "Patagonia",
+    "description": "Pill-resistant 100% polyester fleece with a sweater-knit face, full-zip, front pockets, stand-up collar, Fair Trade Certified sewn.",
+    "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80",
+    "stock": 65
+  },
+  {
+    "name": "Columbia Bora Bora Booney Hat",
+    "category": "Clothing",
+    "price": 34.99,
+    "rating": 4.5,
+    "brand": "Columbia",
+    "description": "UPF 50 sun protection, Omni-Shade fabric, mesh crown ventilation, adjustable cord, floating brim, moisture-wicking sweatband.",
+    "image": "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=600&q=80",
+    "stock": 110
+  },
+  {
+    "name": "Instant Pot Duo 7-in-1",
+    "category": "Kitchen",
+    "price": 79.95,
+    "rating": 4.7,
+    "brand": "Instant Pot",
+    "description": "Pressure cooker, slow cooker, rice cooker, steamer, saut\u00e9 pan, yogurt maker, and warmer. 6-quart capacity, 13 one-touch programs, stainless steel pot.",
+    "image": "https://images.unsplash.com/photo-1585515320310-259814833e62?w=600&q=80",
+    "stock": 85
+  },
+  {
+    "name": "Vitamix 5200 Blender",
+    "category": "Kitchen",
+    "price": 549.95,
+    "rating": 4.7,
+    "brand": "Vitamix",
+    "description": "Aircraft-grade stainless steel blades, variable speed control, self-cleaning in 30-60 seconds, 64-oz container, aircraft-grade assembly, 7-year warranty.",
+    "image": "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=600&q=80",
+    "stock": 30
+  },
+  {
+    "name": "Le Creuset Dutch Oven 5.5 Qt",
+    "category": "Kitchen",
+    "price": 419.95,
+    "rating": 4.8,
+    "brand": "Le Creuset",
+    "description": "Enameled cast iron, superior heat distribution, suitable for all cooktops including induction, oven safe to 500\u00b0F, lifetime warranty, dishwasher safe.",
+    "image": "https://images.unsplash.com/photo-1584990347449-a5d9f800a783?w=600&q=80",
+    "stock": 25
+  },
+  {
+    "name": "Nespresso Vertuo Next Coffee Machine",
+    "category": "Kitchen",
+    "price": 179.0,
+    "rating": 4.5,
+    "brand": "Nespresso",
+    "description": "Centrifusion technology extracts coffee at 7000rpm, 5 cup sizes, 37-second heat-up time, automatic capsule ejection, 54oz water tank.",
+    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80",
+    "stock": 50
+  },
+  {
+    "name": "KitchenAid Stand Mixer 5-Qt",
+    "category": "Kitchen",
+    "price": 449.99,
+    "rating": 4.8,
+    "brand": "KitchenAid",
+    "description": "10-speed motor, 67-point planetary mixing action, tilt-head design, 3 attachments included (dough hook, wire whip, flat beater), power hub for 10+ attachments.",
+    "image": "https://images.unsplash.com/photo-1578643463396-0f64b0d3fc1d?w=600&q=80",
+    "stock": 20
+  },
+  {
+    "name": "Cuisinart Air Fryer Toaster Oven",
+    "category": "Kitchen",
+    "price": 199.95,
+    "rating": 4.5,
+    "brand": "Cuisinart",
+    "description": "0.6 cubic foot capacity, air fry, bake, broil, toast, warm, speed convection. 1800W, stainless steel, includes baking pan, wire rack, and crumb tray.",
+    "image": "https://images.unsplash.com/photo-1648330376399-9e8a151e6d2c?w=600&q=80",
+    "stock": 40
+  },
+  {
+    "name": "Global 8-Inch Chef's Knife",
+    "category": "Kitchen",
+    "price": 109.95,
+    "rating": 4.7,
+    "brand": "Global",
+    "description": "Cromova 18 stainless steel, hollow handle filled with sand for perfect balance, seamless one-piece construction, scalpel-sharp edge, dishwasher safe.",
+    "image": "https://images.unsplash.com/photo-1593618998160-e34014e67546?w=600&q=80",
+    "stock": 65
+  },
+  {
+    "name": "Philips Premium Airfryer XXL",
+    "category": "Kitchen",
+    "price": 249.95,
+    "rating": 4.6,
+    "brand": "Philips",
+    "description": "Twin TurboStar technology, 3lb capacity, digital touchscreen, keep warm function, dishwasher-safe parts, cookbook included, 90% less fat than deep fryers.",
+    "image": "https://images.unsplash.com/photo-1648330376399-9e8a151e6d2c?w=600&q=80",
+    "stock": 35
+  },
+  {
+    "name": "Dyson V15 Detect Vacuum",
+    "category": "Home & Garden",
+    "price": 749.99,
+    "rating": 4.7,
+    "brand": "Dyson",
+    "description": "Laser reveals invisible dust, piezo sensor counts particles, HEPA filtration captures 99.97% of particles, 60-min runtime, LCD screen displays performance.",
+    "image": "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=600&q=80",
+    "stock": 28
+  },
+  {
+    "name": "Roomba j7+ Robot Vacuum",
+    "category": "Home & Garden",
+    "price": 599.99,
+    "rating": 4.5,
+    "brand": "iRobot",
+    "description": "PrecisionVision Navigation avoids obstacles, Clean Base auto-empties for 60 days, Imprint Smart Maps, works with Alexa and Google, 2-stage cleaning system.",
+    "image": "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=600&q=80",
+    "stock": 22
+  },
+  {
+    "name": "Nest Learning Thermostat 3rd Gen",
+    "category": "Home & Garden",
+    "price": 249.99,
+    "rating": 4.6,
+    "brand": "Google",
+    "description": "Learns your schedule, auto-away feature, remote control via app, works with Alexa, compatible with 95% of 24V systems, Energy Star certified.",
+    "image": "https://images.unsplash.com/photo-1567925086018-2c3f0a1aa15e?w=600&q=80",
+    "stock": 45
+  },
+  {
+    "name": "Philips Hue Starter Kit",
+    "category": "Home & Garden",
+    "price": 199.99,
+    "rating": 4.6,
+    "brand": "Philips",
+    "description": "4 A19 smart bulbs + Hue Bridge, 16 million colors, works with Alexa/Google/Apple HomeKit, dimmable, schedule routines, geofencing support.",
+    "image": "https://images.unsplash.com/photo-1558002038-1991dbe93d52?w=600&q=80",
+    "stock": 60
+  },
+  {
+    "name": "Weber Spirit II E-310 Gas Grill",
+    "category": "Home & Garden",
+    "price": 569.0,
+    "rating": 4.7,
+    "brand": "Weber",
+    "description": "3 stainless steel burners 30,000 BTU, porcelain-enameled cast-iron grates, iGrill 3 compatible, 529 sq in cooking area, side tables, tool hooks.",
+    "image": "https://images.unsplash.com/photo-1555243896-c709bfa0b564?w=600&q=80",
+    "stock": 15
+  },
+  {
+    "name": "Casper Sleep Original Mattress Queen",
+    "category": "Home & Garden",
+    "price": 1095.0,
+    "rating": 4.5,
+    "brand": "Casper",
+    "description": "4 foam layers including zoned support and AirScape for cooling, durable cover, 100-night sleep trial, 10-year warranty, CertiPUR-US certified.",
+    "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80",
+    "stock": 12
+  },
+  {
+    "name": "Suncast 99-Gallon Deck Box",
+    "category": "Home & Garden",
+    "price": 89.99,
+    "rating": 4.4,
+    "brand": "Suncast",
+    "description": "99-gallon storage capacity, reinforced lid holds up to 300 lbs, lockable, resin construction, stores patio cushions, pool toys, garden supplies.",
+    "image": "https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=600&q=80",
+    "stock": 35
+  },
+  {
+    "name": "Garmin Forerunner 955 GPS Watch",
+    "category": "Sports & Fitness",
+    "price": 499.99,
+    "rating": 4.7,
+    "brand": "Garmin",
+    "description": "Training readiness, race predictor, multisport, solar charging option, heart rate + SpO2, 49 hours GPS battery, music storage for 2000 songs.",
+    "image": "https://images.unsplash.com/photo-1576243345690-4e4b79b9b32a?w=600&q=80",
+    "stock": 32
+  },
+  {
+    "name": "Peloton Bike+ Exercise Bike",
+    "category": "Sports & Fitness",
+    "price": 2495.0,
+    "rating": 4.6,
+    "brand": "Peloton",
+    "description": "23.8\" HD rotating touchscreen, auto-follow resistance, 4-speaker sound system, rear-facing camera, Apple GymKit integration, carbon steel frame.",
+    "image": "https://images.unsplash.com/photo-1591291621164-2c6367723315?w=600&q=80",
+    "stock": 8
+  },
+  {
+    "name": "Bowflex SelectTech 552 Dumbbells",
+    "category": "Sports & Fitness",
+    "price": 429.0,
+    "rating": 4.7,
+    "brand": "Bowflex",
+    "description": "Adjusts from 5 to 52.5 lbs, replaces 15 sets of dumbbells, dial system in seconds, contoured non-slip handle, 2-year warranty.",
+    "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80",
+    "stock": 20
+  },
+  {
+    "name": "Manduka PRO Yoga Mat",
+    "category": "Sports & Fitness",
+    "price": 128.0,
+    "rating": 4.7,
+    "brand": "Manduka",
+    "description": "6mm thick for joint protection, closed-cell surface prevents bacteria, non-slip Dry-Grip texture, lifetime guarantee, 10mm eQua version available.",
+    "image": "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80",
+    "stock": 55
+  },
+  {
+    "name": "TRX All-in-One Suspension Trainer",
+    "category": "Sports & Fitness",
+    "price": 184.95,
+    "rating": 4.6,
+    "brand": "TRX",
+    "description": "Over 300+ exercises, 7 anchor options, adjustable foot cradles, xtender strap, workout guide included, used by military and professional athletes.",
+    "image": "https://images.unsplash.com/photo-1598971639058-a852862beedb?w=600&q=80",
+    "stock": 45
+  },
+  {
+    "name": "Wilson Evolution Basketball",
+    "category": "Sports & Fitness",
+    "price": 69.99,
+    "rating": 4.7,
+    "brand": "Wilson",
+    "description": "Microfiber composite cover, exclusive laid-in channel design, cushion core technology, approved for NFHS competition, size 7 official weight.",
+    "image": "https://images.unsplash.com/photo-1519861531473-9200262188bf?w=600&q=80",
+    "stock": 70
+  },
+  {
+    "name": "Hydro Flask 32 oz Water Bottle",
+    "category": "Sports & Fitness",
+    "price": 44.95,
+    "rating": 4.8,
+    "brand": "Hydro Flask",
+    "description": "TempShield double-wall vacuum insulation, cold 24hrs/hot 12hrs, 18/8 pro-grade stainless steel, BPA-free, powder coat, dishwasher safe lid.",
+    "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&q=80",
+    "stock": 120
+  },
+  {
+    "name": "Maybelline Fit Me Foundation",
+    "category": "Beauty",
+    "price": 9.98,
+    "rating": 4.4,
+    "brand": "Maybelline",
+    "description": "Naturally matte + poreless finish, blurs pores, controls shine, SPF 22, 40 shades, lightweight formula, non-comedogenic, dermatologist tested.",
+    "image": "https://images.unsplash.com/photo-1631730486784-1d6c5e5b3d3f?w=600&q=80",
+    "stock": 300
+  },
+  {
+    "name": "The Ordinary Niacinamide 10% + Zinc",
+    "category": "Beauty",
+    "price": 12.9,
+    "rating": 4.4,
+    "brand": "The Ordinary",
+    "description": "High-strength vitamin B3 serum, reduces blemishes and congestion, balances sebum activity, improves skin texture, suitable for all skin types.",
+    "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=80",
+    "stock": 400
+  },
+  {
+    "name": "Neutrogena Hydro Boost Moisturizer",
+    "category": "Beauty",
+    "price": 19.97,
+    "rating": 4.5,
+    "brand": "Neutrogena",
+    "description": "Hyaluronic acid gel-cream, instantly quenches dry skin, non-greasy, non-comedogenic, oil-free, fragrance-free, absorbs quickly, dermatologist recommended.",
+    "image": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=600&q=80",
+    "stock": 250
+  },
+  {
+    "name": "Fenty Beauty Pro Filt'r Foundation",
+    "category": "Beauty",
+    "price": 40.0,
+    "rating": 4.5,
+    "brand": "Fenty Beauty",
+    "description": "50 shades, soft matte finish, long-wearing 24-hour formula, oil-free, does not clog pores, SPF included in select shades, blendable formula.",
+    "image": "https://images.unsplash.com/photo-1631730486784-1d6c5e5b3d3f?w=600&q=80",
+    "stock": 180
+  },
+  {
+    "name": "Olaplex No.3 Hair Perfector",
+    "category": "Beauty",
+    "price": 30.0,
+    "rating": 4.5,
+    "brand": "Olaplex",
+    "description": "Reduces breakage and visibly strengthens hair, concentrated at-home treatment, patented bond-building technology, works on all hair types.",
+    "image": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80",
+    "stock": 150
+  },
+  {
+    "name": "Dove Deep Moisture Body Wash",
+    "category": "Beauty",
+    "price": 14.97,
+    "rating": 4.7,
+    "brand": "Dove",
+    "description": "NutriumMoisture technology, renews skin's natural nutrients, lathers into a rich creamy lather, pH balanced, dermatologist tested, 22 oz.",
+    "image": "https://images.unsplash.com/photo-1585232351009-aa78ac4f3a90?w=600&q=80",
+    "stock": 350
+  },
+  {
+    "name": "LEGO Technic Bugatti Chiron 42083",
+    "category": "Toys & Games",
+    "price": 379.99,
+    "rating": 4.9,
+    "brand": "LEGO",
+    "description": "3599 pieces, 1:8 scale model, working W16 engine with pistons, gearbox, rear spoiler, push-bar steering, authentic aerodynamic body design.",
+    "image": "https://images.unsplash.com/photo-1518481612222-68bbe828ecd1?w=600&q=80",
+    "stock": 25
+  },
+  {
+    "name": "Hot Wheels Ultimate Garage Playset",
+    "category": "Toys & Games",
+    "price": 99.99,
+    "rating": 4.6,
+    "brand": "Hot Wheels",
+    "description": "900+ cars storage, 4-feet tall, working elevator, launching ramp, T-Rex that attacks cars, helicopter pad, compatible with all Hot Wheels cars.",
+    "image": "https://images.unsplash.com/photo-1594787318286-3d835c1d207f?w=600&q=80",
+    "stock": 40
+  },
+  {
+    "name": "Hasbro Monopoly Classic Board Game",
+    "category": "Toys & Games",
+    "price": 24.99,
+    "rating": 4.6,
+    "brand": "Hasbro",
+    "description": "Classic property trading game, includes 8 tokens, 28 Title Deed cards, 16 Community Chest cards, 16 Chance cards, money pack, 2 dice, 2-8 players.",
+    "image": "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?w=600&q=80",
+    "stock": 150
+  },
+  {
+    "name": "Nintendo Switch OLED Model",
+    "category": "Toys & Games",
+    "price": 349.99,
+    "rating": 4.8,
+    "brand": "Nintendo",
+    "description": "7-inch OLED screen, enhanced audio, 64GB storage, LAN port on dock, white Joy-Con controllers, adjustable kickstand, portable and home mode.",
+    "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=600&q=80",
+    "stock": 30
+  },
+  {
+    "name": "Jenga Classic Game",
+    "category": "Toys & Games",
+    "price": 13.99,
+    "rating": 4.7,
+    "brand": "Hasbro",
+    "description": "54 hardwood blocks, includes stacking sleeve for setup, 1 player or more, no batteries required, for ages 6+, tests skill, strategy, and luck.",
+    "image": "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=600&q=80",
+    "stock": 200
+  },
+  {
+    "name": "Mattel UNO Card Game",
+    "category": "Toys & Games",
+    "price": 7.99,
+    "rating": 4.7,
+    "brand": "Mattel",
+    "description": "108 cards, 2-10 players, ages 7+, customizable Wild cards, special action cards (Skip, Reverse, Draw 2), fun for the whole family.",
+    "image": "https://images.unsplash.com/photo-1632501641765-e568d28b0015?w=600&q=80",
+    "stock": 300
+  },
+  {
+    "name": "The Alchemist - Paulo Coelho",
+    "category": "Books",
+    "price": 14.99,
+    "rating": 4.7,
+    "brand": "HarperCollins",
+    "description": "A fable about following your dreams. The story of Santiago, an Andalusian shepherd boy who journeys from Spain to Egypt in search of treasure. 208 pages, paperback.",
+    "image": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&q=80",
+    "stock": 200
+  },
+  {
+    "name": "Atomic Habits - James Clear",
+    "category": "Books",
+    "price": 18.0,
+    "rating": 4.8,
+    "brand": "Penguin Random House",
+    "description": "An easy and proven way to build good habits and break bad ones. Practical strategies for every day improvement, #1 New York Times Bestseller.",
+    "image": "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?w=600&q=80",
+    "stock": 180
+  },
+  {
+    "name": "Rich Dad Poor Dad - Robert Kiyosaki",
+    "category": "Books",
+    "price": 12.99,
+    "rating": 4.7,
+    "brand": "Plata Publishing",
+    "description": "What the rich teach their kids about money that the poor and middle class do not. Personal finance classic, 30+ million copies sold worldwide.",
+    "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&q=80",
+    "stock": 220
+  },
+  {
+    "name": "Dune - Frank Herbert",
+    "category": "Books",
+    "price": 17.99,
+    "rating": 4.8,
+    "brand": "Ace Books",
+    "description": "Epic sci-fi masterpiece set in a distant future amidst feudal interstellar society. Winner of Hugo and Nebula awards. The best-selling sci-fi novel of all time.",
+    "image": "https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=600&q=80",
+    "stock": 160
+  },
+  {
+    "name": "Python Crash Course 3rd Edition",
+    "category": "Books",
+    "price": 39.99,
+    "rating": 4.7,
+    "brand": "No Starch Press",
+    "description": "A hands-on, project-based introduction to programming in Python 3. Projects include a space invader game, data visualizations, and a web app.",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80",
+    "stock": 140
+  },
+  {
+    "name": "Clean Code - Robert C. Martin",
+    "category": "Books",
+    "price": 44.99,
+    "rating": 4.6,
+    "brand": "Prentice Hall",
+    "description": "A handbook of agile software craftsmanship. Principles, patterns, and practices of writing clean code by Uncle Bob. Essential for every developer.",
+    "image": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=600&q=80",
+    "stock": 120
+  },
+  {
+    "name": "Revlon One-Step Hair Dryer Brush",
+    "category": "Personal Care",
+    "price": 49.99,
+    "rating": 4.5,
+    "brand": "Revlon",
+    "description": "Oval brush design smooths and adds volume simultaneously, ionic technology for frizz control, tourmaline-ceramic coating, 3 heat/speed settings.",
+    "image": "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=600&q=80",
+    "stock": 90
+  },
+  {
+    "name": "Philips Norelco OneBlade Trimmer",
+    "category": "Personal Care",
+    "price": 34.99,
+    "rating": 4.4,
+    "brand": "Philips",
+    "description": "Trims, edges, and shaves any length of hair, dual-sided blade, rechargeable 45min runtime, 3 click-on length guards, waterproof for wet/dry use.",
+    "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80",
+    "stock": 110
+  },
+  {
+    "name": "Braun Series 9 Pro Electric Shaver",
+    "category": "Personal Care",
+    "price": 279.94,
+    "rating": 4.6,
+    "brand": "Braun",
+    "description": "5 synchronized shaving elements, SkinGuard pressure sensor, ProLift trimmer for flat-lying hairs, SmartCare Center, 100% waterproof.",
+    "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80",
+    "stock": 35
+  },
+  {
+    "name": "Oral-B IO Series 9 Electric Toothbrush",
+    "category": "Personal Care",
+    "price": 249.99,
+    "rating": 4.6,
+    "brand": "Oral-B",
+    "description": "Magnetic drive technology, AI-powered iO app, round brush head, 7 smart modes, interactive display, SmartPressure sensor, 3-week battery life.",
+    "image": "https://images.unsplash.com/photo-1559591935481-2f5e7ab4f0d2?w=600&q=80",
+    "stock": 40
+  },
+  {
+    "name": "Rolex Submariner Watch (Homage)",
+    "category": "Watches",
+    "price": 299.99,
+    "rating": 4.5,
+    "brand": "Invicta",
+    "description": "Stainless steel case and bracelet, unidirectional rotating bezel, luminous hands and markers, date display, water resistant 200m, Swiss movement.",
+    "image": "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=600&q=80",
+    "stock": 30
+  },
+  {
+    "name": "Casio G-Shock GA-2100",
+    "category": "Watches",
+    "price": 99.0,
+    "rating": 4.6,
+    "brand": "Casio",
+    "description": "Carbon core guard structure, shock resistant, 200m water resistant, world time, stopwatch, countdown timer, LED backlight, 5 daily alarms.",
+    "image": "https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=600&q=80",
+    "stock": 75
+  },
+  {
+    "name": "Apple Watch Series 9 GPS 45mm",
+    "category": "Watches",
+    "price": 429.0,
+    "rating": 4.8,
+    "brand": "Apple",
+    "description": "S9 chip with Double Tap gesture, Always-On Retina LTPO OLED display, ECG, blood oxygen, crash detection, 18-hour battery, carbon neutral.",
+    "image": "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?w=600&q=80",
+    "stock": 50
+  },
+  {
+    "name": "Fossil Gen 6 Smartwatch",
+    "category": "Watches",
+    "price": 249.0,
+    "rating": 4.4,
+    "brand": "Fossil",
+    "description": "Wear OS by Google, Qualcomm Snapdragon 4100+, SpO2 + heart rate sensor, sleep tracking, Google Pay, 1.28\" AMOLED display, 30min fast charge.",
+    "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600&q=80",
+    "stock": 45
+  },
+  {
+    "name": "Seiko 5 Automatic SNKE49 Watch",
+    "category": "Watches",
+    "price": 159.0,
+    "rating": 4.5,
+    "brand": "Seiko",
+    "description": "7S26 automatic movement, self-winding, day-date display, stainless steel case, hardlex crystal, water resistant 30m, Seiko 5 iconic design.",
+    "image": "https://images.unsplash.com/photo-1622434641406-a158123450f9?w=600&q=80",
+    "stock": 60
+  },
+  {
+    "name": "Peppa Pig Toy House Playset",
+    "category": "Baby & Kids",
+    "price": 49.99,
+    "rating": 4.6,
+    "brand": "Peppa Pig",
+    "description": "3-story house with furniture and accessories, includes Peppa and George figures, opens for easy play, working doorbell sound, for ages 2+.",
+    "image": "https://images.unsplash.com/photo-1558877385-1c9100b1e4d3?w=600&q=80",
+    "stock": 80
+  },
+  {
+    "name": "Graco 4Ever DLX 4-in-1 Car Seat",
+    "category": "Baby & Kids",
+    "price": 299.99,
+    "rating": 4.7,
+    "brand": "Graco",
+    "description": "Rear-facing 4-40 lbs, forward-facing 22-65 lbs, highback booster 30-100 lbs, backless booster 40-120 lbs, 10-position headrest, machine wash cover.",
+    "image": "https://images.unsplash.com/photo-1576765608866-5b51046452be?w=600&q=80",
+    "stock": 25
+  },
+  {
+    "name": "Melissa & Doug Wooden Puzzles Set",
+    "category": "Baby & Kids",
+    "price": 26.99,
+    "rating": 4.7,
+    "brand": "Melissa & Doug",
+    "description": "4 chunky wooden puzzles, vehicles, farm animals, safari animals, and pets themes, 8 pieces each, bright colors, easy grip knobs, ages 2+.",
+    "image": "https://images.unsplash.com/photo-1606503825008-909a67e63c3d?w=600&q=80",
+    "stock": 120
+  },
+  {
+    "name": "Purina Pro Plan Dry Dog Food",
+    "category": "Pet Supplies",
+    "price": 64.99,
+    "rating": 4.7,
+    "brand": "Purina",
+    "description": "Real chicken as #1 ingredient, fortified with guaranteed live probiotics, 26% protein, omega-6 fatty acids for coat, natural prebiotic fiber for digestion.",
+    "image": "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=600&q=80",
+    "stock": 100
+  },
+  {
+    "name": "Kong Classic Dog Toy",
+    "category": "Pet Supplies",
+    "price": 14.99,
+    "rating": 4.7,
+    "brand": "Kong",
+    "description": "Natural rubber, can be filled with treats, dishwasher safe, unpredictable bounce for interactive play, satisfies instinctual needs, vet recommended.",
+    "image": "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&q=80",
+    "stock": 200
+  },
+  {
+    "name": "Furminator Long Hair Dog Deshedding Tool",
+    "category": "Pet Supplies",
+    "price": 44.99,
+    "rating": 4.7,
+    "brand": "FURminator",
+    "description": "Reaches through topcoat to safely remove undercoat, reduces shedding up to 90%, FURejector button for easy hair removal, skin guard for comfort.",
+    "image": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=600&q=80",
+    "stock": 85
+  },
+  {
+    "name": "Whiskas Cat Treats Temptations",
+    "category": "Pet Supplies",
+    "price": 19.99,
+    "rating": 4.7,
+    "brand": "Whiskas",
+    "description": "Crunchy outside, soft inside, under 2 calories each, vitamins and minerals included, resealable pack, taurine for heart health, real chicken flavor.",
+    "image": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=600&q=80",
+    "stock": 300
+  },
+  {
+    "name": "Quaker Oats Old Fashioned Oatmeal",
+    "category": "Grocery",
+    "price": 8.99,
+    "rating": 4.7,
+    "brand": "Quaker",
+    "description": "100% whole grain oats, good source of fiber, cholesterol-free, non-GMO, no artificial flavors, 5lb canister, heart healthy, quick cook 5 minutes.",
+    "image": "https://images.unsplash.com/photo-1517673400267-0251440c45dc?w=600&q=80",
+    "stock": 500
+  },
+  {
+    "name": "Nutella Hazelnut Spread 35.2oz",
+    "category": "Grocery",
+    "price": 12.99,
+    "rating": 4.8,
+    "brand": "Nutella",
+    "description": "Spreadable hazelnut cocoa spread, no artificial colors or preservatives, palm oil, skim milk and cocoa, gluten-free, halal certified, classic glass jar.",
+    "image": "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&q=80",
+    "stock": 400
+  },
+  {
+    "name": "Lay's Classic Potato Chips 8oz",
+    "category": "Grocery",
+    "price": 4.49,
+    "rating": 4.6,
+    "brand": "Lay's",
+    "description": "Classic salted potato chips, gluten-free, no MSG, real potatoes, sunflower oil cooked, sea salt seasoned, party size resealable bag.",
+    "image": "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=600&q=80",
+    "stock": 800
+  },
+  {
+    "name": "Nescafe Gold Blend Instant Coffee",
+    "category": "Grocery",
+    "price": 16.99,
+    "rating": 4.5,
+    "brand": "Nescafe",
+    "description": "Premium freeze-dried instant coffee, smooth and balanced taste, 100% Arabica and Robusta blend, 200g glass jar, no grinding required.",
+    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80",
+    "stock": 350
+  }
+]

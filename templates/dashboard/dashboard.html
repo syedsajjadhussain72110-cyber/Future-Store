@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}My Dashboard - Future Store{% endblock %}
+
+{% block content %}
+
+<div class="admin-page">
+<div class="container-custom">
+
+<div class="admin-header">
+<h1><i class="fa-solid fa-gauge" style="color:var(--clr-primary);margin-right:10px;"></i>My Dashboard</h1>
+<div class="admin-actions">
+<a href="{{ url_for('orders.my_orders') }}" class="admin-btn admin-btn-secondary">
+<i class="fa-solid fa-box"></i> All Orders
+</a>
+<a href="{{ url_for('store.index') }}" class="admin-btn admin-btn-accent">
+<i class="fa-solid fa-bag-shopping"></i> Continue Shopping
+</a>
+</div>
+</div>
+
+<!-- ── Profile + stats ──────────────────────────────────────────────── -->
+<div class="admin-stats-grid" style="margin-bottom:24px;">
+
+<div class="admin-stat-card">
+<span class="admin-stat-label">Name</span>
+<strong style="font-size:19px;">{{ user['name'] }}</strong>
+</div>
+
+<div class="admin-stat-card">
+<span class="admin-stat-label">Email</span>
+<strong style="font-size:16px;word-break:break-all;">{{ user['email'] }}</strong>
+</div>
+
+<div class="admin-stat-card">
+<span class="admin-stat-label">Total Orders</span>
+<strong>{{ total_orders }}</strong>
+</div>
+
+<div class="admin-stat-card">
+<span class="admin-stat-label">Total Spent</span>
+<strong>${{ '%.2f'|format(total_spent) }}</strong>
+</div>
+
+</div>
+
+<!-- ── Recent orders ─────────────────────────────────────────────────── -->
+<div class="admin-panel">
+<h2>Recent Orders</h2>
+
+{% if recent_orders %}
+<table class="admin-table">
+<thead>
+<tr>
+<th>Order</th>
+<th>Items</th>
+<th>Total</th>
+<th>Status</th>
+<th>Date</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+{% for order in recent_orders %}
+<tr>
+<td>#{{ order['id'] }}</td>
+<td>{{ order_details.get(order['id'], [])|length }} item(s)</td>
+<td>${{ '%.2f'|format(order['total_price']) }}</td>
+<td>
+<span class="status-badge
+{% if order['status'] == 'Confirmed' %}" style="background:var(--clr-teal-50);color:var(--clr-teal-dk);"
+{% elif order['status'] == 'Shipped' %}" style="background:var(--clr-blue-50);color:var(--clr-blue);"
+{% elif order['status'] == 'Delivered' %}" style="background:var(--clr-purple-100);color:var(--clr-purple-800);"
+{% elif order['status'] == 'Cancelled' %}" style="background:var(--clr-red-50);color:var(--clr-red);"
+{% else %}"
+{% endif %}>
+{{ order['status'] }}
+</span>
+</td>
+<td>{{ order['created_at']|format_date }}</td>
+<td><a href="{{ url_for('orders.my_orders') }}" class="admin-link">View</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% if total_orders > recent_orders|length %}
+<div style="text-align:center;margin-top:16px;">
+<a href="{{ url_for('orders.my_orders') }}" class="admin-link">View all {{ total_orders }} orders →</a>
+</div>
+{% endif %}
+{% else %}
+<p class="admin-empty">You haven't placed any orders yet. <a href="{{ url_for('store.index') }}" class="admin-link">Start shopping</a>.</p>
+{% endif %}
+
+</div>
+
+</div>
+</div>
+
+{% endblock %}

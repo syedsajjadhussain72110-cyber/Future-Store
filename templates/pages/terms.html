@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Terms of Service | Future Store{% endblock %}
+
+{% block content %}
+
+<section class="info-page">
+<div class="container-custom">
+
+<div class="info-header">
+<span class="info-eyebrow"><i class="fa-solid fa-file-contract"></i> Legal</span>
+<h1>Terms of Service</h1>
+<p>Last updated: January 2026</p>
+</div>
+
+<div class="legal-card">
+
+<h2>1. Using Future Store</h2>
+<p>By creating an account or placing an order, you agree to these terms. You must provide accurate information when registering and keep your login credentials secure.</p>
+
+<h2>2. Orders &amp; pricing</h2>
+<p>All prices are shown in USD and may change without notice. Placing an order is an offer to purchase; we confirm the order once payment and inventory are verified. We reserve the right to cancel orders affected by pricing or stock errors.</p>
+
+<h2>3. Payment</h2>
+<p>We accept Cash on Delivery, Credit/Debit Card, and EasyPaisa/JazzCash. You agree to provide valid payment information and authorize us to charge the order total, including applicable tax and shipping.</p>
+
+<h2>4. Shipping &amp; returns</h2>
+<p>Estimated delivery times are not guaranteed. See our <a href="{{ url_for('pages.returns') }}">Returns &amp; Refunds</a> page for our full return policy.</p>
+
+<h2>5. Reviews</h2>
+<p>You may leave one rating and review per product. Reviews must be honest and based on your own experience; we may remove reviews that are abusive, spam, or unrelated to the product.</p>
+
+<h2>6. Account suspension</h2>
+<p>We may suspend or terminate accounts that violate these terms, attempt fraud, or abuse our platform.</p>
+
+<h2>7. Limitation of liability</h2>
+<p>Future Store is provided "as is." We are not liable for indirect or incidental damages arising from use of the site, to the fullest extent permitted by law.</p>
+
+<h2>8. Changes to these terms</h2>
+<p>We may update these terms from time to time. Continued use of Future Store after changes means you accept the updated terms.</p>
+
+<h2>9. Contact</h2>
+<p>Questions about these terms? Reach out through our <a href="{{ url_for('pages.contact') }}">Contact page</a>.</p>
+
+</div>
+
+</div>
+</section>
+
+{% endblock %}

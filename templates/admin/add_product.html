@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Add Product | Future Store Admin{% endblock %}
+
+{% block content %}
+
+<section class="admin-page">
+<div class="container-custom">
+
+<div class="admin-header">
+<div>
+<h1>Add Product</h1>
+<p>Create a new catalog listing.</p>
+</div>
+<div class="admin-actions">
+<a href="{{ url_for('admin.products') }}" class="admin-btn admin-btn-secondary">Back to Products</a>
+</div>
+</div>
+
+<div class="admin-panel admin-form-panel">
+<form method="POST" action="{{ url_for('admin.add_product') }}" class="admin-form">
+
+<div class="admin-form-grid">
+<div class="admin-form-group">
+<label for="name">Product Name</label>
+<input type="text" id="name" name="name" required>
+</div>
+
+<div class="admin-form-group">
+<label for="category">Category</label>
+<input type="text" id="category" name="category" required placeholder="Electronics">
+</div>
+
+<div class="admin-form-group">
+<label for="brand">Brand</label>
+<input type="text" id="brand" name="brand" placeholder="Sony">
+</div>
+
+<div class="admin-form-group">
+<label for="price">Price ($)</label>
+<input type="number" id="price" name="price" step="0.01" min="0" required>
+</div>
+
+<div class="admin-form-group">
+<label for="rating">Rating</label>
+<input type="number" id="rating" name="rating" step="0.1" min="0" max="5" value="4.0">
+</div>
+
+<div class="admin-form-group">
+<label for="stock">Stock</label>
+<input type="number" id="stock" name="stock" min="0" value="50">
+</div>
+</div>
+
+<div class="admin-form-group">
+<label for="image">Image URL</label>
+<input type="url" id="image" name="image" placeholder="https://..." required>
+<small>Paste a direct link to a product photo (e.g. an Unsplash image URL). A preview appears below as you type.</small>
+<div id="adminImagePreview" class="admin-image-preview is-empty"></div>
+</div>
+
+<div class="admin-form-group">
+<label for="description">Description</label>
+<textarea id="description" name="description" rows="5" placeholder="Product details..."></textarea>
+</div>
+
+<button type="submit" class="admin-btn admin-btn-accent">Save Product</button>
+
+</form>
+</div>
+
+</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard | Future Store{% endblock %}
+
+{% block content %}
+
+<section class="admin-page">
+<div class="container-custom">
+
+<div class="admin-header">
+<div>
+<h1>Admin Dashboard</h1>
+<p>Overview of store performance and recent activity.</p>
+</div>
+<div class="admin-actions">
+<a href="{{ url_for('admin.products') }}" class="admin-btn">Manage Products</a>
+<a href="{{ url_for('admin.orders') }}" class="admin-btn admin-btn-secondary">View Orders</a>
+<a href="{{ url_for('admin.add_product') }}" class="admin-btn admin-btn-accent">Add Product</a>
+</div>
+</div>
+
+<div class="admin-stats-grid">
+<div class="admin-stat-card">
+<span class="admin-stat-label">Total Products</span>
+<strong>{{ total_products }}</strong>
+</div>
+<div class="admin-stat-card">
+<span class="admin-stat-label">Total Users</span>
+<strong>{{ total_users }}</strong>
+</div>
+<div class="admin-stat-card">
+<span class="admin-stat-label">Total Orders</span>
+<strong>{{ total_orders }}</strong>
+</div>
+<div class="admin-stat-card">
+<span class="admin-stat-label">Revenue</span>
+<strong>${{ '%.2f'|format(total_revenue) }}</strong>
+</div>
+</div>
+
+<div class="admin-panels">
+
+<div class="admin-panel">
+<h2>Recent Orders</h2>
+{% if recent_orders %}
+<table class="admin-table">
+<thead>
+<tr>
+<th>Order</th>
+<th>Customer</th>
+<th>Total</th>
+<th>Status</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+{% for order in recent_orders %}
+<tr>
+<td>#{{ order['id'] }}</td>
+<td>{{ order['user_name'] }}</td>
+<td>${{ '%.2f'|format(order['total_price']) }}</td>
+<td><span class="status-badge">{{ order['status'] }}</span></td>
+<td>{{ order['created_at']|format_date }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}
+<p class="admin-empty">No orders yet.</p>
+{% endif %}
+</div>
+
+<div class="admin-panel">
+<h2>Top Products</h2>
+{% if top_products %}
+<table class="admin-table">
+<thead>
+<tr>
+<th>Product</th>
+<th>Brand</th>
+<th>Orders</th>
+</tr>
+</thead>
+<tbody>
+{% for item in top_products %}
+<tr>
+<td>{{ item['name'] }}</td>
+<td>{{ item['brand'] or '—' }}</td>
+<td>{{ item['order_count'] }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}
+<p class="admin-empty">No sales data yet.</p>
+{% endif %}
+</div>
+
+</div>
+
+</div>
+</section>
+
+{% endblock %}

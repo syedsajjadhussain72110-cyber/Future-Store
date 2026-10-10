@@ -1,0 +1,365 @@
+{% extends "base.html" %}
+
+{% block title %}Future Store - AI Powered Shopping{% endblock %}
+
+{% block content %}
+
+{% if search or selected_category or min_price or max_price or min_rating or sort %}
+
+<!-- ══ SEARCH / FILTER RESULTS ══════════════════════════════════════════ -->
+<section style="padding-top:36px;">
+<div class="container-custom">
+
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:24px;">
+<h2 class="section-title" style="margin-bottom:0;padding-bottom:0;">
+{% if search %}Results for "{{ search }}"{% else %}{{ selected_category or 'All Products' }}{% endif %}
+<span style="font-size:14px;font-weight:500;color:var(--clr-gray-400);">({{ products|length }} found)</span>
+</h2>
+<a href="{{ url_for('store.index') }}" class="admin-link">Clear filters</a>
+</div>
+
+{% if products %}
+<div class="products-grid">
+{% for product in products %}
+<div class="product-card">
+<a href="{{ url_for('store.product_detail', product_id=product['id']) }}">
+<img class="product-image" src="{{ product_image(product['image']) }}" alt="{{ product['name'] }}"
+     onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/placeholder.svg') }}'">
+</a>
+<div class="product-body">
+<h3>{{ product['name'] }}</h3>
+<p class="price">${{ '%.2f'|format(product['price']) }}</p>
+<a href="{{ url_for('store.product_detail', product_id=product['id']) }}" class="view-btn">View Product</a>
+</div>
+</div>
+{% endfor %}
+</div>
+{% else %}
+<p class="admin-empty">No products matched your search. Try a different keyword or filter.</p>
+{% endif %}
+
+</div>
+</section>
+
+{% else %}
+
+<!-- ══ DEFAULT HOMEPAGE ═════════════════════════════════════════════════ -->
+<section class="hero-section">
+
+<div class="container-custom">
+
+<div class="hero-grid">
+
+<div class="hero-content">
+
+<span class="hero-badge">
+🚀 Future Shopping Experience
+</span>
+
+<h1>
+Discover The Future Of Shopping
+</h1>
+
+<p>
+Shop smarter with AI-powered recommendations,
+exclusive deals, trending products and premium
+shopping experience.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#products" class="hero-primary-btn">
+Shop Now
+</a>
+
+<a href="#trending" class="hero-secondary-btn">
+Explore Trends
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img
+src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+alt="Hero">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="categories-section">
+
+<div class="container-custom">
+
+<h2 class="section-title">
+Featured Categories
+</h2>
+
+<div class="categories-grid">
+
+{% set cat_icons = {
+  'Electronics': 'fa-bolt', 'Computers': 'fa-laptop', 'Clothing': 'fa-shirt',
+  'Footwear': 'fa-shoe-prints', 'Home & Garden': 'fa-house', 'Kitchen': 'fa-utensils',
+  'Beauty': 'fa-spa', 'Personal Care': 'fa-pump-soap', 'Sports & Fitness': 'fa-dumbbell',
+  'Toys & Games': 'fa-gamepad', 'Books': 'fa-book', 'Grocery': 'fa-basket-shopping',
+  'Baby & Kids': 'fa-baby', 'Pet Supplies': 'fa-paw', 'Watches': 'fa-clock'
+} %}
+{% for cat in categories[:6] %}
+<a href="{{ url_for('store.index', category=cat) }}" class="category-card">
+<i class="fa-solid {{ cat_icons.get(cat, 'fa-tag') }}" style="color:var(--clr-primary);"></i>
+<h3>{{ cat }}</h3>
+</a>
+{% endfor %}
+
+</div>
+
+</div>
+
+</section>
+<section class="flash-sale">
+
+<div class="container-custom">
+
+<div class="flash-header">
+
+<h2>
+⚡ Flash Sale
+</h2>
+
+<div class="countdown">
+Ends Soon
+</div>
+
+</div>
+
+<div class="flash-grid">
+
+<div class="flash-card">
+🔥 Up To 70% OFF
+</div>
+
+<div class="flash-card">
+🔥 Electronics Sale
+</div>
+
+<div class="flash-card">
+🔥 Gaming Deals
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="trending" class="carousel-section">
+
+<div class="container-custom">
+
+<h2 class="section-title">
+🔥 Shop By Category
+</h2>
+
+<div class="carousel-tabs">
+{% for cat in carousel_categories %}
+<button class="carousel-tab{% if loop.first %} active{% endif %}" data-target="swiper-{{ loop.index0 }}">{{ cat }}</button>
+{% endfor %}
+</div>
+
+{% for cat in carousel_categories %}
+<div class="swiper future-swiper{% if not loop.first %} hidden{% endif %}" id="swiper-{{ loop.index0 }}">
+<div class="swiper-wrapper">
+{% for product in carousel_groups.get(cat, []) %}
+<div class="swiper-slide">
+
+<div class="product-card">
+
+<a href="{{ url_for('store.product_detail', product_id=product['id']) }}">
+
+<img
+class="product-image"
+src="{{ product_image(product['image']) }}"
+alt="{{ product['name'] }}"
+onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/placeholder.svg') }}'">
+
+</a>
+
+<div class="product-body">
+
+<span class="badge">{{ cat }}</span>
+
+<h3>
+{{ product['name'] }}
+</h3>
+
+<p class="price">
+${{ '%.2f'|format(product['price']) }}
+</p>
+
+<a
+href="{{ url_for('store.product_detail', product_id=product['id']) }}"
+class="view-btn">
+View Product
+</a>
+
+</div>
+
+</div>
+
+</div>
+{% endfor %}
+</div>
+
+<div class="swiper-pagination"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+
+</div>
+{% endfor %}
+
+</div>
+
+</section>
+
+<section class="best-sellers">
+
+<div class="container-custom">
+
+<h2 class="section-title">
+🆕 New Arrivals
+</h2>
+
+<div class="products-grid">
+
+{% for product in new_arrivals %}
+
+<div class="product-card">
+
+<a href="{{ url_for('store.product_detail', product_id=product['id']) }}">
+
+<img
+class="product-image"
+src="{{ product_image(product['image']) }}"
+alt="{{ product['name'] }}"
+onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/placeholder.svg') }}'">
+
+</a>
+
+<div class="product-body">
+
+<span class="badge">
+New
+</span>
+
+<h3>
+{{ product['name'] }}
+</h3>
+
+<p class="price">
+${{ '%.2f'|format(product['price']) }}
+</p>
+
+<a
+href="{{ url_for('store.product_detail', product_id=product['id']) }}"
+class="view-btn">
+View Product
+</a>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</section>
+
+<section id="products">
+
+<div class="container-custom">
+
+<h2 class="section-title">
+🛍 All Products
+</h2>
+
+<div class="products-grid">
+
+{% for product in products %}
+
+<div class="product-card">
+
+<a href="{{ url_for('store.product_detail', product_id=product['id']) }}">
+
+<img
+class="product-image"
+src="{{ product_image(product['image']) }}"
+alt="{{ product['name'] }}"
+onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/placeholder.svg') }}'">
+
+</a>
+
+<div class="product-body">
+
+<h3>
+{{ product['name'] }}
+</h3>
+
+<p class="price">
+${{ '%.2f'|format(product['price']) }}
+</p>
+
+<a
+href="{{ url_for('store.product_detail', product_id=product['id']) }}"
+class="view-btn">
+View Product
+</a>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</section>
+
+<section class="ai-section">
+
+<div class="container-custom">
+
+<div class="ai-box">
+
+<h2>
+🤖 Future Store AI Assistant
+</h2>
+
+<p>
+Need help finding the perfect product?
+Our AI Assistant is ready to help.
+</p>
+
+<button class="ai-launch-btn">
+Start AI Shopping
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+{% endif %}
+
+{% endblock %}

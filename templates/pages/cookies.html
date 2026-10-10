@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Cookie Policy | Future Store{% endblock %}
+
+{% block content %}
+
+<section class="info-page">
+<div class="container-custom">
+
+<div class="info-header">
+<span class="info-eyebrow"><i class="fa-solid fa-cookie-bite"></i> Legal</span>
+<h1>Cookie Policy</h1>
+<p>Last updated: January 2026</p>
+</div>
+
+<div class="legal-card">
+
+<h2>What cookies we use</h2>
+<p>Future Store uses a small number of essential cookies — we don't use cookies for third-party advertising or tracking across other websites.</p>
+
+<table class="cookie-table">
+<thead>
+<tr><th>Cookie</th><th>Purpose</th><th>Duration</th></tr>
+</thead>
+<tbody>
+<tr><td>session</td><td>Keeps you signed in and remembers your cart contents</td><td>Until you log out</td></tr>
+<tr><td>ai_chat_history</td><td>Remembers your recent AI Assistant conversation so it can pick up where you left off</td><td>Until you log out</td></tr>
+</tbody>
+</table>
+
+<h2>Why we need them</h2>
+<p>These cookies are essential to core functionality — staying signed in, keeping items in your cart, and checking out — so the site can't function properly without them.</p>
+
+<h2>Managing cookies</h2>
+<p>Most browsers let you block or delete cookies in their settings. If you block our essential cookies, you won't be able to stay signed in or use the cart.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy? Reach out through our <a href="{{ url_for('pages.contact') }}">Contact page</a>.</p>
+
+</div>
+
+</div>
+</section>
+
+{% endblock %}
